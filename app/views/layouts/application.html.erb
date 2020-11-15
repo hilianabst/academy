@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Academy</title>
+     <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+   
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+     <script src="https://kit.fontawesome.com/ab72e68cce.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <div class ="row">
+      <div class ="col-12">
+        <%= render "shared/navbar"%>
+      </div>
+
+       
+        <div class="container">
+         <% if alert || notice %>
+            <div class ="alert alert-info" role="alert">
+             <%= notice %>
+              <%= alert %>
+            </div> 
+          <% end %>      
+        
+       
+        </div>
+         <%= yield %>
+     
+         </body>
+    </div>
+ 
+
+
+     <div class ="col-12">
+        <%= render "shared/footer"%>
+      </div>
+</html>

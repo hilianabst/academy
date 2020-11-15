@@ -1,0 +1,45 @@
+
+.titulo{
+ font-size: 150%;
+
+}
+
+.btn_registro{
+  position: absolute;
+  bottom: -300px;
+}
+
+.img_principal {
+  background-image: url('imagen_principal_redimen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: left; */
+  background-size: 100%;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  padding-bottom: 350px;
+  position:relative;
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: center;	
+}
+
+#titulo{
+
+  top: 10px;
+  left: 10%;
+}
+
+.imagen_taladro {
+  width: 300px;
+  margin: 0 auto 0 auto;
+  /* padding: 5px; */
+  padding-top: 80px;
+}
+
+#bosch{
+  color: red;
+  
+}
