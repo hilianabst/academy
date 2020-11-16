@@ -1,4 +1,85 @@
+<div class="container">
+    <div class="main-body">
+    
+        
+          <!-- /Nombre-->
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="/assets/estudiantes.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4><%= current_user.name %> </h4>
+                      <button class="btn btn-outline-primary">Editar Perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nombre Completo</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= current_user.name %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= current_user.email %>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+              <div class="row gutters-sm">
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Mis Capacitaciones</i></h6>
+                      <small>Taladros y Atornilladores</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Mis Certificados</i>Project Status</h6>
+                      <small>Taladros y atornilladores</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+</hr>
 <div class="container">
 <h1>Users</h1>
 
@@ -11,13 +92,16 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <td><%= current_user.name %> </td>
+     <%# <><%= link_to 'Edit', edit_user_path(user) %>
+
+    <%# <% @users.each do |user| %> 
+      <%# <tr> %>
+        <%# <><%= user.name %>
+        <%# <><%= link_to 'Show', user %>
+        <%# <><%= link_to 'Edit', edit_user_path(user) %>
+        <%# <><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%# </tr>
     <% end %>
   </tbody>
 </table>

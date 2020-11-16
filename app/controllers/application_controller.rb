@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
         trainings_path(current_user) # your path
     end
 
+    def authenticate_admin!
+        redirect_to new_user_session_path unless (!current_user.nil? && current_user.admin)
+        flash[:danger] = "No tienes autorización para entrar en esa sección"
+    end
+    
     protected
     def configure_permited_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys:[:name])

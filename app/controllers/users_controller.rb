@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:index, :edit]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    @user = User.all
   end
 
   # GET /users/1
@@ -19,6 +21,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @users = User.all
+    @user = User.all
   end
 
   # POST /users

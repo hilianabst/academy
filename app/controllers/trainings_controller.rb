@@ -1,5 +1,6 @@
 class TrainingsController < ApplicationController
   before_action :set_training, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:index]
 
   # GET /trainings
   # GET /trainings.json
