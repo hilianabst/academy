@@ -3,11 +3,29 @@
  font-size: 150%;
 
 }
+.botones_index{
+  vertical-align: baseline;
+}
+
+
 
 .btn_registro{
-  position: absolute;
-  bottom: -300px;
+  height: 4rem;
+  
 }
+
+.card_index{
+  margin-left: 110px;
+  
+}
+
+.botones_registro{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
 
 .img_principal {
   background-image: url('imagen_principal_redimen.jpg');
@@ -16,9 +34,9 @@
   /* background-position: left; */
   background-size: 100%;
   width: -webkit-fill-available;
-  height: -webkit-fill-available;
-  padding-bottom: 350px;
-  position:relative;
+  height: 320px;
+  /* padding-bottom: %; */
+  position: relative;
   }
 
   .container-fluid {
@@ -32,11 +50,9 @@
   left: 10%;
 }
 
-.imagen_taladro {
-  width: 300px;
-  margin: 0 auto 0 auto;
-  /* padding: 5px; */
-  padding-top: 80px;
+.imagen_taladro{
+  max-width: 100%;
+  height: fit-content;
 }
 
 #bosch{

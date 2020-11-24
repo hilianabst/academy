@@ -8,9 +8,23 @@
 
     			<div class="col  align-items-center text-center">
          <h1 class="mt-3 text-light"> Registrate y certificate con <strong><span id="bosch"> Bosch </span> <strong></h1>
-    		
-            <%= link_to 'Registrarse', new_user_registration_path, class:"btn_registro btn btn-primary btn-lg  align-items-center" %>
-   		   </div>	
+          </div>
+	
+            
+            <div class="botones_registro btn-group align-items-center text-center" role="group" aria-label="Basic example">
+                <%= link_to 'Registrate',   new_user_registration_path, class:"btn_registro btn btn-primary btn-lg btn-responsive btninter centrado"  %> 
+                <a class=" btn btn-light  btn-responsive btninter centrado" href='/users/auth/google_oauth2' style="text-transform:none">
+                  <div class="left">
+                        <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                  </div>
+                  Ingresa con Gmail
+ 
+               </a> 
+                <%# <%= link_to 'Registrate',   user_google_oauth2_omniauth_callback_path, class:"btn_registro btn btn-primary btn-lg btn-responsive btninter centrado"  %>  %>
+               <%# user_google_oauth2_omniauth_callback_path %>
+              </div> 
+         
   </div>
 
 

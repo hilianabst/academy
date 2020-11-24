@@ -52,26 +52,13 @@
                 <%= link_to 'Registrarse', new_user_registration_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to 'Login', new_user_session_path, class:"nav-link" %>
+                <%= link_to 'Iniciar sesion ', new_user_session_path, class:"nav-link" %>
             </li>
          <% end %> 
     </ul>
 
-    <%# <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-    </form> %>
 
-    <div class="form-inline my-2 my-lg-0">
-      <%=form_tag(root_path, method: :get) do %>
-        <%=text_field_tag(:search, params[:search], :class =>"form-control mr-sm-2")%>
-        <%=submit_tag("Buscar", :class =>"btn btn-outline-dark my-2 my-sm-0")%>
-        <%#<%= link_to "Limpiar", all_tweets_path, :class =>"btn btn-outline-info my-2 my-sm-0"%>
-       
-      <%end%>
-      
-    </div>
- 
+    
  
 
 

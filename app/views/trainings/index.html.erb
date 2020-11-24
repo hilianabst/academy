@@ -4,12 +4,57 @@
    		   </div>	
 </div>
 
+</br>
+<%# modal agregar capacitacion %>
+<button type="button" class="btn btn-primary btn float-right" data-toggle="modal" data-target="#modalNewTraining">Agregar Capacitacion</button>
+  
+  <%= form_with(model: @training, remote: true) do |form| %>
+  <div class="modal fade" id="modalNewTraining" tabindex="-1" role="dialog"> 
+      <div class="modal-dialog"> 
+          <div class="modal-content">
+
+              <div class="modal-header bg-primary">
+                 <h2 class="modal-title text-white">Nueva Capacitacion</h2>
+                 <button type="button" class="close" data-dismiss="modal" arial-label="Close">             
+                 <span aria-hidden="true">&times;</span>
+                 </button>
+              </div>
+
+              <div class="modal-body">
+                     <div class="form-group"> 
+                      <%= form.label :name %>
+                      <%= form.text_field :name, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= form.label :description %>
+                      <%= form.text_field :description, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= form.label :url_video %>
+                      <%= form.text_field :url_video, :class => "form-control" %>
+                    </div>
+                      <div class="field">
+                        <%= form.label :image %>
+                        <%= form.file_field :image, :class => "form-control"  %>
+                    </div>
+              </div>
+
+               <div class="modal-footer">
+                 <%= form.submit "Guardar", :class => "btn btn-primary" %>
+              </div>
+          </div>
+      </div>
+  </div>
+ <%end%>
+
+<%# fin modal agregar Capacitacion %>
+
 <div class="">
   <%= render "shared/card"%>
 </div>
 
 
-<table>
+<%# <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -20,19 +65,25 @@
   </thead>
 
   <tbody>
-    <% @trainings.each do |training| %>
+    <% @trainings.each do |training| 
       <tr>
-        <td><%= training.name %></td>
-        <td><%= training.description %></td>
-        <td><%= training.url_video %></td>
-        <td><%= link_to 'Show', training %></td>
-        <td><%= link_to 'Edit', edit_training_path(training) %></td>
-        <td><%= link_to 'Destroy', training, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <><%= training.name 
+        <td><%= training.description 
+        <td><%= training.url_video
+        <td><%= link_to 'Show', training
+        <td><%= link_to 'Edit', edit_training_path(training) 
+        <td><%= link_to 'Destroy', training, method: :delete, data: { confirm: 'Are you sure?' }
       </tr>
-    <% end %>
+    <% end 
   </tbody>
 </table>
 
-<br>
+<br> %>
+
+ <%# <h2>Listado por AJAX</h2>
+  <div class="" id="container_trainings">
+    <%=render @trainings
+  </div>
+<br> %>
 
 <%= link_to 'New Training', new_training_path %>

@@ -1,0 +1,10 @@
+<%# 
+$(function(){
+    $("#modalNewTraining").modal('hide')
+    $("#training_name").val("")
+    $("#training_description").val("")
+    $("#training_url_video").val("")
+    $("#training_image").val("")
+
+ $("#container_trainings").append('<%= j render @training 
+}) %>

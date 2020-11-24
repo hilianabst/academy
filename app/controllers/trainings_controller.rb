@@ -1,11 +1,13 @@
 class TrainingsController < ApplicationController
   before_action :set_training, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:index]
+  before_action :set_current_training, only: [:likes]
 
   # GET /trainings
   # GET /trainings.json
   def index
     @trainings = Training.all
+    @training = Training.new
   end
 
   # GET /trainings/1
@@ -24,18 +26,33 @@ class TrainingsController < ApplicationController
 
   # POST /trainings
   # POST /trainings.json
+  # def create
+  #   @training = Training.new(training_params)
+
+  #   respond_to do |format|
+  #     if @training.save
+  #       format.html { redirect_to @training, notice: 'Training was successfully created.' }
+  #       format.json { render :show, status: :created, location: @training }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @training.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
   def create
     @training = Training.new(training_params)
-
     respond_to do |format|
-      if @training.save
-        format.html { redirect_to @training, notice: 'Training was successfully created.' }
-        format.json { render :show, status: :created, location: @training }
-      else
-        format.html { render :new }
-        format.json { render json: @training.errors, status: :unprocessable_entity }
-      end
-    end
+          if @training.save
+            format.html { redirect_to @training, notice: 'Training was successfully created.' }
+            format.json { render :show, status: :created, location: @training }
+            format.js
+          else
+            format.html { render :new }
+            format.json { render json: @training.errors, status: :unprocessable_entity }
+            format.js
+          end
+        end
   end
 
   # PATCH/PUT /trainings/1
@@ -62,14 +79,27 @@ class TrainingsController < ApplicationController
     end
   end
 
+  def likes
+    if @training.is_liked?(current_user)
+      @training.remove_like(current_user)
+    else
+      @training.add_like(current_user)
+    end
+    redirect_to trainings_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_training
       @training = Training.find(params[:id])
     end
 
+    def set_current_training
+      @training = Training.find(params[:training_id])
+    end
+
     # Only allow a list of trusted parameters through.
     def training_params
-      params.require(:training).permit(:name, :description, :url_video)
+      params.require(:training).permit(:name, :description, :url_video, :image)
     end
 end
