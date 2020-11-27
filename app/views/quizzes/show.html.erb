@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container bg-white m-0 p-4">
+<%= link_to 'Edit Training', edit_training_quiz_path(@quiz.training, @quiz) %> 
+  <h2>Training:<%= @quiz.training.name %></h2>
+  <%= link_to 'Nueva Pregunta', new_training_quiz_question_path(@quiz.training, @quiz) %> 
+    
+    <%= render @quiz.questions%>
+</div>

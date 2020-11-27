@@ -4,7 +4,7 @@ class Training < ApplicationRecord
     has_and_belongs_to_many :users
     has_many :likes
     has_many :liking_users, :through => :likes, :source => :user
-    has_one :test 
+    has_one :quiz 
     has_one_attached :image
 
     validates :name, :description, :url_video, :image, presence: true

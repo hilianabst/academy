@@ -1,0 +1,3 @@
+<h4><%= question.title%><%=link_to "Editar pregunta", edit_training_quiz_question_path(question.quiz.training, question.quiz,question)%> </h4>
+<%=link_to "Aregar opcion", new_training_quiz_question_option_path(question.quiz.training, question.quiz, question)%> 
+<%=render question.options%>

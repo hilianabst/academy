@@ -6,8 +6,10 @@
 
 </br>
 <%# modal agregar capacitacion %>
-<button type="button" class="btn btn-primary btn float-right" data-toggle="modal" data-target="#modalNewTraining">Agregar Capacitacion</button>
-  
+     <% if current_user.admin %>
+      <button type="button" class="btn btn-primary btn float-right" data-toggle="modal" data-target="#modalNewTraining">Agregar Capacitacion</button>
+     <%end %>
+
   <%= form_with(model: @training, remote: true) do |form| %>
   <div class="modal fade" id="modalNewTraining" tabindex="-1" role="dialog"> 
       <div class="modal-dialog"> 
@@ -86,4 +88,4 @@
   </div>
 <br> %>
 
-<%= link_to 'New Training', new_training_path %>
+<%# <%= link_to 'New Training', new_training_path %> 

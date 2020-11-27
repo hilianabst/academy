@@ -44,6 +44,7 @@ class TrainingsController < ApplicationController
     @training = Training.new(training_params)
     respond_to do |format|
           if @training.save
+            quiz = Quiz.create(name:"Prueba",training:@training)
             format.html { redirect_to @training, notice: 'Training was successfully created.' }
             format.json { render :show, status: :created, location: @training }
             format.js

@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
   
-  resources :tests
+  
+  get 'certificates/index'
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   resources :trainings do
     post 'likes', to: 'trainings#likes'
+    resources :quizzes do
+     resources :questions do
+       resources :options
+     end
+
+    end
   end
   resources :users
  

@@ -1,0 +1,5 @@
+<div>
+    <%= option.text%>
+    <%= link_to 'Edit',  edit_training_quiz_question_option_path(option.question.quiz.training, option.question.quiz, option.question,option) %>
+    <%= link_to 'Destroy', training_quiz_question_option_path(option.question.quiz.training, option.question.quiz, option.question,option), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_22_135651) do
+ActiveRecord::Schema.define(version: 2020_11_26_222707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,10 +70,18 @@ ActiveRecord::Schema.define(version: 2020_11_22_135651) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.bigint "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_questions_on_test_id"
+    t.bigint "quiz_id"
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.bigint "training_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_quizzes_on_training_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -83,14 +91,6 @@ ActiveRecord::Schema.define(version: 2020_11_22_135651) do
     t.datetime "updated_at", null: false
     t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.string "name"
-    t.bigint "training_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["training_id"], name: "index_tests_on_training_id"
   end
 
   create_table "trainings", force: :cascade do |t|
@@ -129,8 +129,8 @@ ActiveRecord::Schema.define(version: 2020_11_22_135651) do
   add_foreign_key "likes", "trainings"
   add_foreign_key "likes", "users"
   add_foreign_key "options", "questions"
-  add_foreign_key "questions", "tests"
-  add_foreign_key "tests", "trainings"
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "quizzes", "trainings"
   add_foreign_key "trainings_users", "trainings"
   add_foreign_key "trainings_users", "users"
 end
