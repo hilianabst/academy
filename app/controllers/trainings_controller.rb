@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
   before_action :set_training, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, except: [:index]
+  before_action :authenticate_admin!, except: [:index, :show, :likes]
   before_action :set_current_training, only: [:likes]
 
   # GET /trainings

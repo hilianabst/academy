@@ -1,34 +1,31 @@
-<div clas="row bg-white">
+<div clas=" bg-white">
 <center>
 <style>
 .signature, .title { 
-float:left;
+/* float:left; */
   border-top: 1px solid #000;
   width: 200px; 
   text-align: center;
-   margin-left: 100px;
+   /* margin-left: 100px; */
 }
 </style>
 
 </br>
 </br>
 </br>
-<div class="bg-white" style="width:800px; height:600px; padding:20px; text-align:center; margin-left: 200px; border: 10px solid #787878">
+<div class="bg-white" style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
 <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
       <img src="/assets/logobosch2525.jpg" class="float-left" />
       <br><br>
        <span style="font-size:30px; font-weight:bold">Certificado de finalización</span>
-       <br>
-       <br>
-       <br>
-       <br>
-       <span style="font-size:25px"><i>Se certifica que</i></span>
        <br><br>
-       <span style="font-size:30px"><b><%= current_user.name %> </b></span><br/><br/>
-       <span style="font-size:25px"><i>Ha completado el curso</i></span> <br/><br/>
-       <span style="font-size:30px"><%= @training.name %> </span> <br/><br/>
-       <span style="font-size:20px">with score of <b>$grade.getPoints()%</b></span> <br/><br/><br/><br/>
-       <span style="font-size:25px"><i>Completed Date</i></span><br>
+       <span style="font-size:25px"><i>Se certifica que</i></span>
+       <br>
+       <span style="font-size:30px"><b><%= current_user.name %> </b></span><br/>
+       <span style="font-size:25px"><i>Ha completado la capacitacion</i></span> <br/>
+       <span style="font-size:30px"><%= @training.name %> </span> <br/>
+       <span style="font-size:20px">con un puntaje de: <b></b></span> <br/>
+       <span style="font-size:25px"><i>Certificado emitido a la fecha</i></span><br>
        <span style="font-size:25px"><i><%= Date.today %> </i></span><br>
 <table style="margin-top:40px;float:left">
 <tr>
@@ -38,7 +35,7 @@ float:left;
 <td style="width:200px;float:left;border:0;border-bottom:1px solid #000;"></td>
 </tr>
 <tr>
-<td style="text-align:center"><span><b>Signature</b></td>
+<td style="text-align:center"><span><b>Firma</b></td>
 </tr>
 </table>
 <table style="margin-top:40px;float:right">
@@ -49,7 +46,7 @@ float:left;
 <td style="width:200px;float:right;border:0;border-bottom:1px solid #000;"></td>
 </tr>
 <tr>
-<td style="text-align:center"><span><b>Signature</b></td>
+<td style="text-align:center"><span><b>Firma</b></td>
 </tr>
 </table>
 </div>

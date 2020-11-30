@@ -1,5 +1,5 @@
  <%# tarjetas %>
- <div class="card_index container">
+ <div class="center-block">
  <h2 class="display-4 font-weight-bold  text-center text-primary mt-5">Capacitaciones</h2>
 
       <%@trainings.each do |training|%>
@@ -25,7 +25,7 @@
                             <%= training.likes.count%> 
 
                                 <%= link_to ('<i class="'+training.like_icon(current_user)+'"></i>').html_safe, training_likes_path(training), method: :post%>
-                               
+                     
                                   <div class=" botones_index btn-sm btn-group text-right  ml-5" role="group" aria-label="Basic example">
                     
                                             <a href="<%= training.url_video %>" class="btn btn-outline-danger mt-2 " data-toggle="modal"  data-target="#videoYoutubeModal">Ver videos</a>

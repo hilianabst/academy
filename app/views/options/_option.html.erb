@@ -1,5 +1,8 @@
 <div>
-    <%= option.text%>
-    <%= link_to 'Edit',  edit_training_quiz_question_option_path(option.question.quiz.training, option.question.quiz, option.question,option) %>
-    <%= link_to 'Destroy', training_quiz_question_option_path(option.question.quiz.training, option.question.quiz, option.question,option), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <input type="radio" id="option_<%=option.id%>" name="option_<%=option.question.id%>[]" value="">
+   <label for="option_<%=option.id%>"><%= option.text%></label>
+    <% if current_user.try(:admin?)%>
+            <%= link_to 'Edit',  edit_training_quiz_question_option_path(option.question.quiz.training, option.question.quiz, option.question,option) %>
+            <%= link_to 'Destroy', training_quiz_question_option_path(option.question.quiz.training, option.question.quiz, option.question,option), method: :delete, data: { confirm: 'Are you sure?' } %>
+     <%end%>
 </div>
