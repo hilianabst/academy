@@ -8,11 +8,11 @@
 <%# modal agregar capacitacion %>
      <% if current_user.admin %>
       <button type="button" class="btn btn-primary btn float-right" data-toggle="modal" data-target="#modalNewTraining">Agregar Capacitacion</button>
-     <%end %>
+   
 
-  <%= form_with(model: @training, remote: true) do |form| %>
-  <div class="modal fade" id="modalNewTraining" tabindex="-1" role="dialog"> 
-      <div class="modal-dialog"> 
+  <%= form_with(model: Training.new, remote: true) do |form| %>
+  <div class="modal fade" id="modalNewTraining" tabindex="-1" role="dialog" aria-hidden="true"> 
+      <div class="modal-dialog"  role="document"> 
           <div class="modal-content">
 
               <div class="modal-header bg-primary">
@@ -47,14 +47,24 @@
           </div>
       </div>
   </div>
+    <%end %>
  <%end%>
 
 <%# fin modal agregar Capacitacion %>
 
-<div class="">
-  <%= render "shared/card"%>
+
+
+
+<div class="" id="">
+  <%= render "shared/card"%> 
+   
 </div>
 
+ <h2>Listado por AJAX</h2>
+ <h2 class="display-4 font-weight-bold  text-center text-primary mt-5">Capacitaciones</h2>
+  <div class="" id="container_trainings">
+    <%= render @trainings %> 
+  </div>
 
 <%# <table>
   <thead>

@@ -41,6 +41,8 @@ gem 'activeadmin'
 gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store'
 gem 'dotenv-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 group :development, :test do

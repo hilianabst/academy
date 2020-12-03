@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2]
-    has_and_belongs_to_many :trainings
-    has_many :likes
+    has_and_belongs_to_many :trainings, dependent: :destroy
+    has_many :likes, dependent: :destroy
     has_many :liked_trainings, :through => :likes, :source => :training
 
     def self.from_omniauth(auth)

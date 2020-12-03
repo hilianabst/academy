@@ -4,5 +4,10 @@ class CertificatesController < ApplicationController
   def index
     @trainings = Training.all
     @training = Training.all
+    respond_to do |format|
+      format.html
+      format.pdf {render template:'certificates/pdf', pdf:'pdf'}
+    end
   end
+
 end

@@ -13,7 +13,7 @@
                     <div class="mt-3">
                       <h4><%= current_user.name %> </h4>
                       <%# <button class="btn btn-outline-primary">Editar Perfil</button> %>
-                      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modalEditUser_<%= current_user.id %>">Editar Perfil Modal</button>
+                      <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modalEditUser_<%= current_user.id %>">Editar Perfil</button>
                       <%# <button type="button" class="btn btn-primary btn float-right" data-toggle="modal" data-target="#modalNewTraining">Agregar Capacitacion</button> %>
                     </div>
                   </div>
@@ -24,8 +24,8 @@
                 <ul class="list-group list-group-flush m-2">
                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Mis likes</i></h6>
                     
-                       <%current_user.liked_trainings.each do |training|%> 
-                       <%= training.name%> 
+                       <%current_user.liked_trainings.each do |training|%>  </br>
+                       <%= training.name%> </br>
                       <%end%>
                 </ul>
               </div>

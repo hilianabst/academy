@@ -1,10 +1,16 @@
-<%# 
-$(function(){
-    $("#modalNewTraining").modal('hide')
-    $("#training_name").val("")
-    $("#training_description").val("")
-    $("#training_url_video").val("")
-    $("#training_image").val("")
+<%# console.log("hola") %>
 
- $("#container_trainings").append('<%= j render @training 
-}) %>
+$("#modalNewTraining").modal('hide')
+
+$(".modal-backdrop").hide()
+$("#training_name").val("")
+$("#training_description").val("")
+$("#training_url_video").val("")
+$("#training_image").val("")
+
+$("#container_trainings").append('<%= j render @training %>')
+
+
+
+ 
+    
