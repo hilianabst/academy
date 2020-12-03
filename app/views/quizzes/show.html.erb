@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <div class="container bg-white m-1 p-4">
  <% if current_user.try(:admin?)%>
@@ -14,5 +14,6 @@
     <%= render @quiz.questions%>
 
       <div class="text-center"><button class="btn btn-primary btn-sx" type="button">Enviar respuestas</button></div>
+      <%= link_to 'Back', trainings_path %>
 </div>
 

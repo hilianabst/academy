@@ -24,7 +24,7 @@
                 <ul class="list-group list-group-flush m-2">
                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Mis likes</i></h6>
                     
-                       <%current_user.liked_trainings.each do |training|%>  </br>
+                       <%current_user.liked_trainings.each do |training|%>
                        <%= training.name%> </br>
                       <%end%>
                 </ul>
@@ -142,5 +142,5 @@
       </div>
   </div>
  <%end%>
-<%= link_to 'New User', new_user_path %>
+<%# <%= link_to 'New User', new_user_path %> 
 </div>

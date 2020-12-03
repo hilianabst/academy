@@ -1,11 +1,11 @@
 class Training < ApplicationRecord
     include ActionView::Helpers::UrlHelper
 
-    has_and_belongs_to_many :users
-    has_many :likes
+    has_and_belongs_to_many :users, dependent: :delete_all
+    has_many :likes, dependent: :delete_all
     has_many :liking_users, :through => :likes, :source => :user
-    has_one :quiz, dependent: :destroy
-    has_one_attached :image
+    has_one :quiz, dependent: :delete
+    has_one_attached :image, dependent: :delete
 
     validates :name, :description, :url_video, :image, presence: true
 
@@ -19,7 +19,7 @@ class Training < ApplicationRecord
     end
   
     def remove_like(user)
-      Like.where(user: user, training: self).first.destroy
+      Like.where(user: user, training: self).first.delete
   
     end
   
